@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Button from '../components/Button.astro';
+import FlashlightCard from '../components/FlashlightCard.astro';
+import PricingCard from '../components/PricingCard.astro';
 // Astro Component
 ---
 
@@ -512,92 +514,38 @@ import Button from '../components/Button.astro';
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <div
-              class="flashlight-card h-[400px] border border-stone-300 bg-white p-8 flex flex-col justify-between rounded-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group reveal-up delay-200"
-              onmousemove="updateFlashlight(event, this)"
-            >
-              <div
-                class="w-12 h-12 bg-stone-100 rounded-lg flex items-center justify-center text-stone-900 mb-6 group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500"
-              >
-                <iconify-icon
-                  icon="solar:pen-new-square-linear"
-                  class="text-2xl"
-                ></iconify-icon>
-              </div>
-              <div>
-                <h3 class="text-2xl font-display font-medium mb-3">
-                  Fluxo Contínuo
-                </h3>
-                <p class="text-stone-500 text-sm leading-relaxed">
-                  A tinta flui sem interrupções, permitindo que seus pensamentos
-                  corram livremente para o papel sem fricção.
-                </p>
-              </div>
-              <div class="h-1 w-full bg-stone-100 mt-8 overflow-hidden">
-                <div
-                  class="h-full bg-stone-900 w-0 group-hover:w-full transition-all duration-700 ease-out"
-                ></div>
-              </div>
-            </div>
+            <!-- 
+              Cards de Experiência de Escrita (Flashlight Cards) instanciados via Componente.
+              Transformar blocos repetitivos em componentes ajuda muito na escalabilidade, manutenção
+              do código e redução de linhas no arquivo principal (index.astro).
+              
+              - icon: recebe o nome do ícone (usando a biblioteca Iconify).
+              - title e description: conteúdo dinâmico principal do card.
+              - revealDelayClass: controla o atraso em que cada card aparece ao fazer scroll (efeito "escadinha").
+              - progressDelayClass: controla o atraso do carregamento da barra inferior no hover.
+            -->
+            <FlashlightCard 
+              icon="solar:pen-new-square-linear"
+              title="Fluxo Contínuo"
+              description="A tinta flui sem interrupções, permitindo que seus pensamentos corram livremente para o papel sem fricção."
+              revealDelayClass="delay-200"
+            />
 
-            <!-- Card 2 -->
-            <div
-              class="flashlight-card h-[400px] border border-stone-300 bg-white p-8 flex flex-col justify-between rounded-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group reveal-up delay-400"
-              onmousemove="updateFlashlight(event, this)"
-            >
-              <div
-                class="w-12 h-12 bg-stone-100 rounded-lg flex items-center justify-center text-stone-900 mb-6 group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500"
-              >
-                <iconify-icon
-                  icon="solar:soundwave-square-linear"
-                  class="text-2xl"
-                ></iconify-icon>
-              </div>
-              <div>
-                <h3 class="text-2xl font-display font-medium mb-3">
-                  Silêncio Absoluto
-                </h3>
-                <p class="text-stone-500 text-sm leading-relaxed">
-                  Mecanismo de clique silencioso e ponta amortecida. Escreva em
-                  qualquer ambiente sem distrações.
-                </p>
-              </div>
-              <div class="h-1 w-full bg-stone-100 mt-8 overflow-hidden">
-                <div
-                  class="h-full bg-stone-900 w-0 group-hover:w-full transition-all duration-700 ease-out delay-100"
-                ></div>
-              </div>
-            </div>
+            <FlashlightCard 
+              icon="solar:soundwave-square-linear"
+              title="Silêncio Absoluto"
+              description="Mecanismo de clique silencioso e ponta amortecida. Escreva em qualquer ambiente sem distrações."
+              revealDelayClass="delay-400"
+              progressDelayClass="delay-100"
+            />
 
-            <!-- Card 3 -->
-            <div
-              class="flashlight-card h-[400px] border border-stone-300 bg-white p-8 flex flex-col justify-between rounded-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group reveal-up delay-600"
-              onmousemove="updateFlashlight(event, this)"
-            >
-              <div
-                class="w-12 h-12 bg-stone-100 rounded-lg flex items-center justify-center text-stone-900 mb-6 group-hover:bg-stone-900 group-hover:text-white transition-colors duration-500"
-              >
-                <iconify-icon
-                  icon="solar:scale-linear"
-                  class="text-2xl"
-                ></iconify-icon>
-              </div>
-              <div>
-                <h3 class="text-2xl font-display font-medium mb-3">
-                  Equilíbrio Neutro
-                </h3>
-                <p class="text-stone-500 text-sm leading-relaxed">
-                  Centro de gravidade estudado para repousar na junção da mão,
-                  reduzindo a fadiga em 40%.
-                </p>
-              </div>
-              <div class="h-1 w-full bg-stone-100 mt-8 overflow-hidden">
-                <div
-                  class="h-full bg-stone-900 w-0 group-hover:w-full transition-all duration-700 ease-out delay-200"
-                ></div>
-              </div>
-            </div>
+            <FlashlightCard 
+              icon="solar:scale-linear"
+              title="Equilíbrio Neutro"
+              description="Centro de gravidade estudado para repousar na junção da mão, reduzindo a fadiga em 40%."
+              revealDelayClass="delay-600"
+              progressDelayClass="delay-200"
+            />
           </div>
         </div>
 
@@ -646,132 +594,44 @@ import Button from '../components/Button.astro';
           <div
             class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto"
           >
-            <!-- Card 1: Produto Padrão -->
-            <div
-              class="bg-[#1c1c1c]/80 backdrop-blur-md border border-white/10 p-8 rounded-2xl flex flex-col justify-between h-[420px] hover:border-white/30 transition-colors reveal-up delay-200"
-            >
-              <div>
-                <div
-                  class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white mb-6"
-                >
-                  <iconify-icon
-                    icon="solar:pen-linear"
-                    class="text-xl"
-                  ></iconify-icon>
-                </div>
-                <h3 class="text-2xl font-display font-medium text-white mb-2">
-                  Standard Edition
-                </h3>
-                <div
-                  class="text-[10px] font-mono uppercase tracking-widest text-stone-400 mb-6"
-                >
-                  Apenas a Caneta
-                </div>
-                <p class="text-stone-400 text-sm leading-relaxed mb-8">
-                  A Precision Pen original, feita em alumínio de grau
-                  aeroespacial. Perfeita para quem busca o essencial com
-                  qualidade impecável.
-                </p>
-              </div>
-              <div class="mt-auto">
-                <div class="text-3xl font-display text-white mb-4">
-                  $89<span
-                    class="text-xs text-stone-500 font-mono ml-1 uppercase"
-                    >usd</span
-                  >
-                </div>
-                <Button variant="secondary-dark" onClick="window.location.href = 'compra.html'">
-                  Comprar Agora
-                </Button>
-              </div>
-            </div>
+            <!-- 
+              Cards de Compra / Assinatura instanciados via Componente 
+              Aqui usamos o PricingCard para renderizar os 3 planos diferentes.
+              Note que o segundo card ativa a prop `isPremium` e passa um título customizado com HTML.
+            -->
+            <PricingCard 
+              icon="solar:pen-linear"
+              title="Standard Edition"
+              subtitle="Apenas a Caneta"
+              description="A Precision Pen original, feita em alumínio de grau aeroespacial. Perfeita para quem busca o essencial com qualidade impecável."
+              price="$89"
+              priceUnit="usd"
+              buttonText="Comprar Agora"
+              buttonHref="compra.html"
+              revealDelayClass="delay-200"
+            />
 
-            <!-- Card 2: Premium (Central - Baseado na Imagem) -->
-            <div
-              class="bg-[#111111]/90 backdrop-blur-xl border border-white/10 p-10 rounded-2xl flex flex-col justify-center items-center h-[480px] shadow-2xl shadow-black/80 relative transform md:-translate-y-6 hover:scale-[1.02] transition-transform duration-500 reveal-up delay-300 w-full"
-            >
-              <!-- Glow Effect -->
-              <div
-                class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl pointer-events-none"
-              ></div>
+            <PricingCard 
+              isPremium={true}
+              icon="solar:crown-bold"
+              title="Artools<span class='font-light'>Pro</span>"
+              subtitle="Signature Series • 2026"
+              buttonText="Get Early Access"
+              buttonHref="compra.html"
+              revealDelayClass="delay-300"
+            />
 
-              <div
-                class="text-center w-full flex-grow flex flex-col justify-center items-center"
-              >
-                <div
-                  class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#111] mb-6 shadow-lg"
-                >
-                  <iconify-icon
-                    icon="solar:crown-bold"
-                    class="text-xl"
-                  ></iconify-icon>
-                </div>
-
-                <h3
-                  class="text-[2.5rem] font-display text-white mb-6 tracking-tight leading-none"
-                >
-                  Artools<span class="font-light">Pro</span>
-                </h3>
-
-                <div class="w-6 h-[1px] bg-stone-600 mb-4"></div>
-
-                <div
-                  class="text-[9px] font-mono uppercase tracking-[0.3em] text-stone-400 mb-10"
-                >
-                  Signature Series • 2026
-                </div>
-              </div>
-
-              <div class="w-full mt-auto">
-                <Button variant="primary-dark" onClick="window.location.href = 'compra.html'">
-                  Get Early Access
-                  <iconify-icon
-                    icon="solar:arrow-right-linear"
-                    class="text-lg group-hover:translate-x-1 transition-transform"
-                  ></iconify-icon>
-                </Button>
-              </div>
-            </div>
-
-            <!-- Card 3: Assinatura -->
-            <div
-              class="bg-[#1c1c1c]/80 backdrop-blur-md border border-white/10 p-8 rounded-2xl flex flex-col justify-between h-[420px] hover:border-white/30 transition-colors reveal-up delay-500"
-            >
-              <div>
-                <div
-                  class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white mb-6"
-                >
-                  <iconify-icon
-                    icon="solar:infinity-bold"
-                    class="text-xl"
-                  ></iconify-icon>
-                </div>
-                <h3 class="text-2xl font-display font-medium text-white mb-2">
-                  Creator Club
-                </h3>
-                <div
-                  class="text-[10px] font-mono uppercase tracking-widest text-stone-400 mb-6"
-                >
-                  Assinatura Anual
-                </div>
-                <p class="text-stone-400 text-sm leading-relaxed mb-8">
-                  Refis de tinta ilimitados entregues na sua porta. Garantia
-                  estendida vitalícia e acesso antecipado a novos produtos da
-                  linha Artools.
-                </p>
-              </div>
-              <div class="mt-auto">
-                <div class="text-3xl font-display text-white mb-4">
-                  $29<span
-                    class="text-xs text-stone-500 font-mono ml-1 uppercase"
-                    >/ano</span
-                  >
-                </div>
-                <Button variant="secondary-dark" onClick="window.location.href = 'compra.html'">
-                  Assinar Agora
-                </Button>
-              </div>
-            </div>
+            <PricingCard 
+              icon="solar:infinity-bold"
+              title="Creator Club"
+              subtitle="Assinatura Anual"
+              description="Refis de tinta ilimitados entregues na sua porta. Garantia estendida vitalícia e acesso antecipado a novos produtos da linha Artools."
+              price="$29"
+              priceUnit="/ano"
+              buttonText="Assinar Agora"
+              buttonHref="compra.html"
+              revealDelayClass="delay-500"
+            />
           </div>
         </div>
       </section>
