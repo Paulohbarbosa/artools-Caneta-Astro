@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import Button from '../components/Button.astro';
 import FlashlightCard from '../components/FlashlightCard.astro';
 import PricingCard from '../components/PricingCard.astro';
+import Marquee from '../components/Marquee.astro';
 // Astro Component
 ---
 
@@ -554,6 +555,9 @@ import PricingCard from '../components/PricingCard.astro';
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-stone-200/50 rounded-full blur-3xl -z-10 animate-pulse pointer-events-none mix-blend-multiply"
         ></div>
       </section>
+
+      <!-- SEÇÃO MARQUEE INFINITO (Componentizado) -->
+      <Marquee />
 
       <!-- 4. SEÇÃO DE COMPRA / ASSINATURA -->
       <section

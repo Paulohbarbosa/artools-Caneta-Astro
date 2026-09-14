@@ -1,0 +1,58 @@
+---
+// src/components/Marquee.astro
+// Componente de letreiro contínuo (Marquee)
+// Você pode passar a prop `words` com um array de palavras personalizadas.
+
+export interface Props {
+  words?: string[];
+}
+
+const defaultWords = [
+  "Precisão Absoluta",
+  "Design Atemporal",
+  "Fluxo Perfeito",
+  "Elegância Tangível",
+  "Inovação Sem Limites"
+];
+
+const { words = defaultWords } = Astro.props;
+---
+
+<section class="bg-black py-8 md:py-12 overflow-hidden relative border-y border-white/10">
+  <div class="flex w-fit animate-marquee">
+    <!-- Bloco Original -->
+    <div class="flex items-center gap-12 px-6 whitespace-nowrap">
+      {words.map((word) => (
+        <>
+          <span class="text-5xl md:text-7xl text-white font-dancing opacity-90">{word}</span>
+          <span class="text-stone-800 text-3xl">•</span>
+        </>
+      ))}
+    </div>
+    <!-- Cópia Exata (Loop) -->
+    <div class="flex items-center gap-12 px-6 whitespace-nowrap" aria-hidden="true">
+      {words.map((word) => (
+        <>
+          <span class="text-5xl md:text-7xl text-white font-dancing opacity-90">{word}</span>
+          <span class="text-stone-800 text-3xl">•</span>
+        </>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+  
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  /* Tempo aumentado de 20s para 40s para deixar a leitura mais suave */
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+</style>
