@@ -1,0 +1,36 @@
+---
+// Button Component
+export interface Props {
+  variant?: 'primary' | 'secondary' | 'primary-dark' | 'secondary-dark';
+  href?: string;
+  class?: string;
+  onClick?: string;
+}
+
+const { 
+  variant = 'primary', 
+  href,
+  class: className = '',
+  onClick
+} = Astro.props;
+
+const baseStyles = "rounded-full font-medium transition-colors flex items-center justify-center gap-2 group";
+
+const variants = {
+  'primary': "px-8 py-4 bg-stone-900 text-white text-sm hover:bg-stone-700 transition-all shadow-xl shadow-stone-900/10 hover:-translate-y-1",
+  'secondary': "px-8 py-4 bg-white/70 backdrop-blur-md text-stone-900 border border-stone-200 text-sm hover:bg-white transition-all shadow-sm hover:-translate-y-1",
+  'primary-dark': "w-full py-3.5 px-6 bg-white text-[#111] text-[13px] hover:bg-stone-200",
+  'secondary-dark': "w-full py-3 px-6 border border-white/20 text-white text-sm hover:bg-white hover:text-[#111]"
+};
+
+// Se href for fornecido, renderiza como <a>, caso contrário como <button>
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag 
+  href={href}
+  onclick={onClick}
+  class:list={[baseStyles, variants[variant], className]}
+>
+  <slot />
+</Tag>
