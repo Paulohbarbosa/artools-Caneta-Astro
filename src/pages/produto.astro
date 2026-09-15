@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Precision Pen Pro - Detalhes do Produto">
+  <main class="min-h-screen bg-[#F5F5F3] pt-32 pb-24">
+    <div class="container mx-auto px-6 md:px-12">
+      
+      <!-- Breadcrumb simples -->
+      <nav class="mb-8 text-sm font-mono uppercase tracking-widest text-stone-500 reveal-up">
+        <a href="/" class="hover:text-stone-900 transition-colors">Início</a> 
+        <span class="mx-2">/</span>
+        <a href="/pagina-2" class="hover:text-stone-900 transition-colors">Catálogo</a>
+        <span class="mx-2">/</span>
+        <span class="text-stone-900">Precision Pen Pro</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Galeria / Imagem Principal -->
+        <div class="reveal-up rounded-2xl overflow-hidden bg-white shadow-xl shadow-stone-200/50 p-8 flex items-center justify-center">
+          <img 
+            src="/assets/pens/pen_precision.jpg" 
+            alt="Precision Pen Pro" 
+            class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700 rounded-xl"
+          />
+        </div>
+
+        <!-- Detalhes do Produto -->
+        <div class="reveal-up delay-100 flex flex-col justify-center">
+          
+          <div class="mb-6">
+            <span class="inline-block px-3 py-1 bg-stone-200 text-stone-600 text-xs font-bold font-mono tracking-widest rounded-full mb-4">ESGOTADO</span>
+            <h1 class="text-4xl md:text-5xl font-display font-bold text-stone-900 mb-4 tracking-tight">Precision Pen Pro</h1>
+            <p class="text-2xl font-mono text-stone-500 mb-6">$129,00</p>
+          </div>
+
+          <p class="text-lg text-stone-600 leading-relaxed mb-8">
+            A ferramenta definitiva para engenheiros, arquitetos e designers. 
+            Forjada com alumínio aeroespacial, a Precision Pen Pro oferece um peso perfeitamente balanceado que minimiza a fadiga durante longas sessões de rascunhos.
+          </p>
+
+          <!-- Features (Bullet points com ícones) -->
+          <ul class="space-y-4 mb-10 text-stone-600">
+            <li class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center text-stone-900">
+                <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+              </div>
+              Corpo em liga de alumínio anodizado
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center text-stone-900">
+                <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+              </div>
+              Mecanismo magnético silencioso
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-stone-200 flex items-center justify-center text-stone-900">
+                <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+              </div>
+              Compatível com refis padrão G2
+            </li>
+          </ul>
+
+          <!-- Seção de "Avise-me" -->
+          <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
+            <h3 class="text-lg font-display font-bold text-stone-900 mb-2">Este produto está atualmente sem estoque.</h3>
+            <p class="text-sm text-stone-500 mb-6">Deixe seu email abaixo e seja o primeiro a saber quando o novo lote estiver disponível. Não enviamos spam.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('E-mail cadastrado com sucesso!');">
+              <input 
+                type="email" 
+                placeholder="Seu melhor e-mail" 
+                required
+                class="flex-1 px-4 py-3 bg-stone-50 border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-stone-900 focus:border-transparent transition-all"
+              />
+              <Button variant="primary" class="whitespace-nowrap">
+                Avise-me <iconify-icon icon="solar:bell-bold" class="text-lg ml-1"></iconify-icon>
+              </Button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+  </main>
+</Layout>
