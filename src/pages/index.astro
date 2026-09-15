@@ -491,7 +491,6 @@ import Layout from '../layouts/Layout.astro';
     <!-- Interactions & Video Canvas Logic -->
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
-        // A sequência de imagens canvas começa aqui...
         gsap.registerPlugin(ScrollTrigger);
 
         // Headline staggered reveal (Específico da Home)
@@ -506,6 +505,95 @@ import Layout from '../layouts/Layout.astro';
             ease: "power4.out",
           }
         );
+
+        // ==========================================
+        // 1. SEQUÊNCIA DE IMAGENS DO CANVAS (HERO)
+        // ==========================================
+        const canvas = document.getElementById("hero-canvas");
+        if (canvas) {
+          const ctx = canvas.getContext("2d", { alpha: false });
+          const frameCount = 192;
+          const currentFrame = { index: 0 };
+          const images = [];
+
+          const preloadImages = () => {
+            for (let i = 1; i <= frameCount; i++) {
+              const img = new Image();
+              const frameNumber = i.toString().padStart(4, "0");
+              img.src = `assets/video_frames/frame_${frameNumber}.jpg`;
+              images.push(img);
+            }
+          };
+
+          const render = () => {
+            const frameIndex = Math.floor(currentFrame.index);
+            const img = images[frameIndex];
+
+            if (img && img.complete) {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            }
+          };
+
+          preloadImages();
+
+          if (images[0]) {
+            images[0].onload = render;
+          }
+
+          let scrollInitialized = false;
+          const initScrollAnimation = () => {
+            if (scrollInitialized) return;
+            scrollInitialized = true;
+
+            let tlScroll = gsap.timeline({
+              scrollTrigger: {
+                trigger: "#hero-sequence",
+                start: "top top",
+                end: "+=3500",
+                pin: true,
+                scrub: 1,
+                onUpdate: () => {
+                  requestAnimationFrame(render);
+                },
+              },
+            });
+
+            tlScroll.to(
+              ".scroll-fade-out",
+              {
+                opacity: 0,
+                y: -30,
+                duration: 0.15,
+                ease: "power2.inOut",
+              },
+              0,
+            );
+
+            tlScroll.to(
+              currentFrame,
+              {
+                index: frameCount - 1,
+                ease: "none",
+                duration: 1,
+              },
+              0,
+            );
+          };
+
+          initScrollAnimation();
+        }
+
+        // ==========================================
+        // 2. EFEITO FLASHLIGHT (CARDS)
+        // ==========================================
+        window.updateFlashlight = function (e, card) {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty("--mouse-x", `${x}px`);
+          card.style.setProperty("--mouse-y", `${y}px`);
+        };
       });
     </script>
 </Layout>
