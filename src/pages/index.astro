@@ -594,6 +594,21 @@ import Layout from '../layouts/Layout.astro';
           card.style.setProperty("--mouse-x", `${x}px`);
           card.style.setProperty("--mouse-y", `${y}px`);
         };
+
+        // ==========================================
+        // 3. SCROLL PARA SEÇÕES VIA HASH (Crossover entre páginas)
+        // ==========================================
+        // Quando o usuário vem de outra página para um link como /#tech-specs, 
+        // a âncora nativa falha porque o GSAP injeta pin-spacers na tela.
+        if (window.location.hash) {
+          setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+              const y = target.getBoundingClientRect().top + window.scrollY - 100;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }, 300);
+        }
       });
     </script>
 </Layout>

@@ -1,5 +1,7 @@
 ---
 // Menu Component
+const pathname = Astro.url.pathname;
+const currentPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
 ---
 <header
   id="main-header"
@@ -22,21 +24,31 @@
   </a>
 
   <nav
-    class="hidden md:flex gap-10 text-[10px] font-mono uppercase tracking-[0.15em] text-stone-500 pointer-events-auto"
+    class="hidden md:flex gap-8 text-[10px] font-mono uppercase tracking-[0.15em] text-stone-500 pointer-events-auto items-center"
   >
     <a
-      href="#tech-specs"
-      class="hover:text-stone-900 transition-colors duration-300"
+      href="/"
+      class={`hover:text-stone-900 transition-colors duration-300 font-bold py-1 ${currentPath === '/' ? 'text-stone-900 border-b-2 border-stone-900' : ''}`}
+      >Início</a
+    >
+    <a
+      href="/pagina-2"
+      class={`hover:text-stone-900 transition-colors duration-300 font-bold py-1 ${currentPath === '/pagina-2' ? 'text-stone-900 border-b-2 border-stone-900' : ''}`}
+      >Catálogo</a
+    >
+    <a
+      href="/#tech-specs"
+      class={`hover:text-stone-900 transition-colors duration-300 ${currentPath === '/#tech-specs' ? 'text-stone-900 border-b-2 border-stone-900' : ''}`}
       >Especificações</a
     >
     <a
-      href="#design"
-      class="hover:text-stone-900 transition-colors duration-300"
+      href="/#design"
+      class=`hover:text-stone-900 transition-colors duration-300 ${currentPath === '/#design' ? 'text-stone-900 border-b-2 border-stone-900' : ''}`
       >Design</a
     >
     <a
-      href="#buy"
-      class="hover:text-stone-900 transition-colors duration-300"
+      href="/#buy"
+      class={`hover:text-stone-900 transition-colors duration-300 ${currentPath === '/#buy' ? 'text-stone-900 border-b-2 border-stone-900' : ''}`}
       >Comprar</a
     >
   </nav>
