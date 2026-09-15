@@ -1,29 +1,155 @@
 ---
 import Menu from '../components/Menu.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const { title = "Artools" } = Astro.props;
 ---
 <!doctype html>
-<html lang="pt-br">
+<html class="scroll-smooth" lang="pt-br">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Iconify -->
+		<script is:inline src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+		<!-- GSAP & ScrollTrigger -->
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 	</head>
-	<body>
+	<body
+		class="antialiased min-h-screen selection:bg-stone-800 selection:text-white"
+	>
+		<!-- Indicador de Rolagem Customizado (Flutuante e Transparente) -->
+		<div
+			id="custom-scrollbar"
+			class="fixed right-[5px] top-0 w-[6px] bg-stone-400/50 hover:bg-stone-400/80 rounded-full z-[9999] transition-opacity duration-300 opacity-0 pointer-events-auto cursor-pointer"
+		></div>
+
 		<Menu />
 		<slot />
 		<Footer />
+
+		<!-- Animações Globais (Menu, Scrollbar, Footer Reveal) -->
+		<script is:inline>
+			document.addEventListener("DOMContentLoaded", () => {
+				// 1. Reveal Up (Animações de entrada no scroll, como no Footer)
+				if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+					gsap.utils.toArray(".reveal-up").forEach(function (elem) {
+						ScrollTrigger.create({
+							trigger: elem,
+							start: "top 85%",
+							onEnter: function () {
+								elem.classList.add("active");
+							},
+						});
+					});
+
+					// 2. Garante que os elementos de hero fiquem visíveis (Header fade in global)
+					gsap.to(".hero-element, header", {
+						y: 0,
+						autoAlpha: 1,
+						duration: 1,
+						stagger: 0.1,
+						ease: "power3.out",
+						delay: 0.1
+					});
+				}
+
+				// 3. Efeito de Scroll no Header
+				const header = document.getElementById("main-header");
+				if (header) {
+					window.addEventListener("scroll", () => {
+						if (window.scrollY > 50) {
+							header.classList.remove("bg-white", "py-6");
+							header.classList.add("bg-white/70", "backdrop-blur-md", "py-4", "shadow-sm");
+						} else {
+							header.classList.add("bg-white", "py-6");
+							header.classList.remove("bg-white/70", "backdrop-blur-md", "py-4", "shadow-sm");
+						}
+					});
+				}
+
+				// 4. Custom Scrollbar Logic
+				const customScrollbar = document.getElementById("custom-scrollbar");
+				if (customScrollbar) {
+					let scrollTimeout;
+					function updateScrollbar() {
+						const scrollHeight = document.documentElement.scrollHeight;
+						const clientHeight = document.documentElement.clientHeight;
+						const scrollTop = window.scrollY;
+
+						if (scrollHeight <= clientHeight) {
+							customScrollbar.style.display = "none";
+							return;
+						} else {
+							customScrollbar.style.display = "block";
+						}
+
+						const scrollRatio = clientHeight / scrollHeight;
+						const thumbHeight = Math.max(scrollRatio * clientHeight, 40);
+						const maxScrollTop = scrollHeight - clientHeight;
+						const scrollProgress = scrollTop / maxScrollTop;
+						const thumbTop = scrollProgress * (clientHeight - thumbHeight);
+
+						customScrollbar.style.height = `${thumbHeight}px`;
+						customScrollbar.style.transform = `translateY(${thumbTop}px)`;
+						customScrollbar.style.opacity = "1";
+
+						clearTimeout(scrollTimeout);
+						scrollTimeout = setTimeout(() => {
+							customScrollbar.style.opacity = "0";
+						}, 2000);
+					}
+
+					window.addEventListener("scroll", updateScrollbar);
+					window.addEventListener("resize", updateScrollbar);
+					updateScrollbar();
+
+					let isDragging = false;
+					let startY;
+					let startScrollTop;
+
+					customScrollbar.addEventListener("mousedown", (e) => {
+						isDragging = true;
+						startY = e.clientY;
+						startScrollTop = window.scrollY;
+						document.body.style.userSelect = "none";
+					});
+
+					window.addEventListener("mousemove", (e) => {
+						if (!isDragging) return;
+						const deltaY = e.clientY - startY;
+						const scrollHeight = document.documentElement.scrollHeight;
+						const clientHeight = document.documentElement.clientHeight;
+						const thumbHeight = Math.max(
+							(clientHeight / scrollHeight) * clientHeight,
+							40,
+						);
+						const scrollRatio =
+							(scrollHeight - clientHeight) / (clientHeight - thumbHeight);
+						window.scrollTo(0, startScrollTop + deltaY * scrollRatio);
+					});
+
+					window.addEventListener("mouseup", () => {
+						isDragging = false;
+						document.body.style.userSelect = "";
+					});
+				}
+			});
+		</script>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
