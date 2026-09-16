@@ -4,13 +4,12 @@ import Button from './Button.astro';
 export interface Props {
   title: string;
   description: string;
-  icon: string;
   image: string; // Nova propriedade de imagem
   href: string;
   delay?: string;
 }
 
-const { title, description, icon, image, href, delay = '' } = Astro.props;
+const { title, description, image, href, delay = '' } = Astro.props;
 ---
 <div class={`bg-white border border-stone-200 flex flex-col justify-between rounded-xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-up overflow-hidden group ${delay}`}>
   <div class="overflow-hidden relative">

@@ -22,23 +22,26 @@
       "Acabamento": "Micro-usinagem a laser (Rugosidade de 0.8µm)",
       "Garantia": "Vitalícia contra defeitos de fabricação"
     },
-    "productInfo": [
-      {
-        "title": "Escrita Suave",
-        "description": "Ponta que desliza facilmente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
-        "image": "/assets/pens/Precision-1.jpeg"
-      },
-      {
-        "title": "Design Ergonômico",
-        "description": "Estrutura perfeitamente balanceada, com materiais intensos e bem definidos, ideais para destacar informações e organizar suas ideias.",
-        "image": "/assets/pens/Precision-2.jpeg"
-      },
-      {
-        "title": "Uso Prático",
-        "description": "Alterne entre o uso e o repouso com um simples toque, de forma rápida e leve, para acompanhar seu ritmo sem interrupções.",
-        "image": "/assets/pens/Precision-3.jpeg"
-      }
-    ],
+    "productInfo": {
+      "subtitle": "Menos é mais.",
+      "details": [
+        {
+          "title": "Escrita Suave",
+          "description": "Ponta que desliza facilmente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
+          "image": "/assets/pens/Precision-1.jpeg"
+        },
+        {
+          "title": "Design Ergonômico",
+          "description": "Estrutura perfeitamente balanceada, com materiais intensos e bem definidos, ideais para destacar informações e organizar suas ideias.",
+          "image": "/assets/pens/Precision-2.jpeg"
+        },
+        {
+          "title": "Uso Prático",
+          "description": "Alterne entre o uso e o repouso com um simples toque, de forma rápida e leve, para acompanhar seu ritmo sem interrupções.",
+          "image": "/assets/pens/Precision-3.jpeg"
+        }
+      ]
+    },
     "reviews": [
       {
         "author": "Marcos A.",
@@ -63,6 +66,217 @@
         "role": "Engenheiro Civil",
         "rating": 5,
         "comment": "O fluxo contínuo de tinta é real. Desde que comprei, não usei nenhuma outra ferramenta para meus esboços e rascunhos."
+      }
+    ]
+  },
+  {
+    "id": "minimalist-ink",
+    "name": "Minimalist Ink",
+    "price": 75.0,
+    "currency": "R$",
+    "status": "EM ESTOQUE",
+    "inStock": true,
+    "category": "Canetas",
+    "image": "/assets/pens/pen_minimalist.jpg",
+    "shortDescription": "Design limpo e essencial para o seu dia a dia. Sem distrações, apenas a escrita pura.",
+    "features": ["Acabamento premium em plastico", "Escrita suave e contínua"],
+    "techSpecs": {
+      "Material do Corpo": "Policarbonato de alta resistência",
+      "Peso": "18 gramas",
+      "Comprimento": "138 mm",
+      "Mecanismo": "Retrátil",
+      "Tipo de Carga": "Refil esferográfico premium",
+      "Acabamento": "Acabamento fosco soft-touch",
+      "Garantia": "1 ano"
+    },
+    "productInfo": {
+      "subtitle": "Menos é mais.",
+      "details": [
+        {
+          "title": "Design Clássico",
+          "description": "Perfeita para ambientes corporativos.",
+          "image": "/assets/pens/Minimalist-1.jpeg"
+        },
+        {
+          "title": "Design Clássico",
+          "description": "Perfeita para ambientes corporativos.",
+          "image": "/assets/pens/Minimalist-2.jpeg"
+        },
+        {
+          "title": "Design Clássico",
+          "description": "Perfeita para ambientes corporativos.",
+          "image": "/assets/pens/Minimalist-3.jpeg"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "author": "Marcos A.",
+        "role": "Arquiteto",
+        "rating": 5,
+        "comment": "Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."
+      }
+    ]
+  },
+  {
+    "id": "stylus-core",
+    "name": "Stylus Core",
+    "price": 100.0,
+    "currency": "R$",
+    "status": "EM ESTOQUE",
+    "inStock": true,
+    "category": "Canetas",
+    "image": "/assets/pens/pen_stylus.jpg",
+    "shortDescription": "Dupla funcionalidade: perfeita para telas touch e anotações rápidas em papel.",
+    "features": ["Acabamento premium em plastico", "Escrita suave e contínua"],
+    "techSpecs": {
+      "Material do Corpo": "Alumínio de alta resistência",
+      "Peso": "20 gramas",
+      "Comprimento": "138 mm",
+      "Mecanismo": "Retrátil",
+      "Tipo de Carga": "Refil esferográfico premium",
+      "Acabamento": "Acabamento anodizado",
+      "Garantia": "Vitalícia"
+    },
+    "productInfo": {
+      "subtitle": "Design e tecnologia no seu dia a dia.",
+      "details": [
+        {
+          "title": "Escrita fluida",
+          "description": "Ponta que desliza suavemente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
+          "image": "/assets/pens/stylus-core-1.jpeg",
+          "icon": "solar:pen-new-square-bold"
+        },
+        {
+          "title": "Design e tecnologia no seu dia a dia.",
+          "description": "Ponta que desliza suavemente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
+          "image": "/assets/pens/stylus-core-2.jpeg",
+          "icon": "solar:pen-new-square-bold"
+        },
+        {
+          "title": "Diversos usos",
+          "description": "A versatilidade que você precisa para criar, desenhar e escrever em qualquer superfície.",
+          "image": "/assets/pens/stylus-core-3.jpeg",
+          "icon": "solar:pen-new-square-bold"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "author": "Marcos A.",
+        "role": "Arquiteto",
+        "rating": 5,
+        "comment": "Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."
+      }
+    ]
+  },
+  {
+    "id": "Titanium Writer",
+    "name": "Titanium Writer",
+    "price": 299.0,
+    "currency": "R$",
+    "status": "EM ESTOQUE",
+    "inStock": true,
+    "category": "Canetas",
+    "image": "/assets/pens/pen_titanium.jpg",
+    "shortDescription": "Resistência de grau militar para lhe acompanhar em qualquer aventura ou ambiente hostil.",
+    "features": ["Acabamento premium", "Escrita suave e contínua"],
+    "techSpecs": {
+      "Material do Corpo": "Titanium 6061-T6 anodizado",
+      "Peso": "40 gramas",
+      "Comprimento": "138 mm",
+      "Mecanismo": "Click",
+      "Tipo de Carga": "Refil esferográfico premium",
+      "Acabamento": "Anodizado",
+      "Garantia": "Vitalícia contra defeitos de fabricação"
+    },
+    "productInfo": {
+      "subtitle": "Performance sem limites",
+      "details": [
+        {
+          "title": "Design Clássico",
+          "description": "Perfeita para ambientes corporativos.",
+          "image": "/assets/pens/Titanium-Write-1.jpeg"
+        },
+        {
+          "title": "Resistência de grau militar",
+          "description": "Construída com titânio de grau militar, suporta impactos, quedas e condições extremas sem perder a integridade ou funcionalidade.",
+          "image": "/assets/pens/Titanium-Write-2.jpeg"
+        },
+        {
+          "title": "Versatilidade no dia a dia",
+          "description": "Resistência de grau militar para lhe acompanhar em qualquer aventura ou ambiente hostil.",
+          "image": "/assets/pens/Titanium-Write-3.jpeg"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "author": "Pedro M.",
+        "role": "Engenheiro Civil",
+        "rating": 5,
+        "comment": "A melhor caneta que já usei. Uso nas minhas obras e não tem uma que aguente tanto!"
+      },
+      {
+        "author": "Pedro M.",
+        "role": "Engenheiro Civil",
+        "rating": 5,
+        "comment": "Exploro ambientes hostis e essa caneta é a unica que aguenta!"
+      }
+    ]
+  },
+  {
+    "id": "Calligraphy Master",
+    "name": "Calligraphy Master",
+    "price": 220.0,
+    "currency": "R$",
+    "status": "EM ESTOQUE",
+    "inStock": true,
+    "category": "Canetas",
+    "image": "/assets/pens/pen_calligraphy.jpg",
+    "shortDescription": "Precisão inigualável e controle de fluxo para artistas, ilustradores e calígrafos.",
+    "features": ["Acabamento premium", "Escrita suave e contínua"],
+    "techSpecs": {
+      "Material do Corpo": "Madeira nobre",
+      "Peso": "40 gramas",
+      "Comprimento": "138 mm",
+      "Mecanismo": "Não possui",
+      "Tipo de Carga": "Acompanha tinteiro",
+      "Acabamento": "Nobre",
+      "Garantia": "Vitalícia contra defeitos de fabricação"
+    },
+    "productInfo": {
+      "subtitle": "A tradição da escrita feita para durar",
+      "details": [
+        {
+          "title": "Design Clássico",
+          "description": "A combinação perfeita de tradição e modernidade.",
+          "image": "/assets/pens/Calligraphy-Master-1.jpeg"
+        },
+        {
+          "title": "Madeira Nobre",
+          "description": "Feita com madeira nobre, proporcionando uma experiência única e elegante.",
+          "image": "/assets/pens/Calligraphy-Master-2.jpeg"
+        },
+        {
+          "title": "Acompanha Tinteiro",
+          "description": "Acompanha um tinteiro para proporcionar uma experiência única e elegante.",
+          "image": "/assets/pens/Calligraphy-Master-3.jpeg"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "author": "Pedro M.",
+        "role": "Engenheiro Civil",
+        "rating": 5,
+        "comment": "A melhor caneta Sque já usei. Uso nas minhas obras e não tem uma que aguente tanto!"
+      },
+      {
+        "author": "Pedro M.",
+        "role": "Engenheiro Civil",
+        "rating": 5,
+        "comment": "Exploro ambientes hostis e essa caneta é a unica que aguenta!"
       }
     ]
   },
@@ -99,95 +313,68 @@
     "reviews": []
   },
   {
-    "id": "minimalist-ink",
-    "name": "Minimalist Ink",
-    "price": 75.0,
-    "currency": "R$",
+    "id": "Pocket Mini",
+    "name": "Pocket Mini",
+    "price": 99.0,
+    "currency": "$",
     "status": "EM ESTOQUE",
-    "inStock": true,
+    "inStock": false,
     "category": "Canetas",
-    "image": "/assets/pens/pen_minimalist.jpg",
-    "shortDescription": "Design limpo e essencial para o seu dia a dia. Sem distrações, apenas a escrita pura.",
-    "features": ["Acabamento premium em plastico", "Escrita suave e contínua"],
+    "image": "/assets/pens/pen_pocket.jpg",
+    "shortDescription": "Compacta, retrátil e prática. Cabe perfeitamente no seu bolso sem causar volume.",
+    "features": ["Acabamento premium", "Escrita suave e contínua"],
     "techSpecs": {
-      "Material do Corpo": "Policarbonato de alta resistência",
-      "Peso": "18 gramas",
-      "Comprimento": "138 mm",
+      "Material do Corpo": "Alumínio anodizado",
+      "Peso": "15 gramas",
+      "Comprimento": "110 mm",
       "Mecanismo": "Retrátil",
       "Tipo de Carga": "Refil esferográfico premium",
-      "Acabamento": "Acabamento fosco soft-touch",
-      "Garantia": "1 ano"
+      "Acabamento": "Acetinado",
+      "Garantia": "1 ano contra defeitos de fabricação"
     },
     "productInfo": {
-      "subtitle": "Menos é mais.",
+      "subtitle": "Design Minimalista",
       "details": [
         {
-          "title": "Design Clássico",
-          "description": "Perfeita para ambientes corporativos.",
+          "title": "Design Compacto",
+          "description": "Com apenas 110mm de comprimento, a Pocket Mini é perfeita para quem busca praticidade sem abrir mão da qualidade.",
           "icon": "solar:pen-new-square-bold"
         }
       ]
     },
-    "reviews": [
-      {
-        "author": "Marcos A.",
-        "role": "Arquiteto",
-        "rating": 5,
-        "comment": "Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."
-      }
-    ]
+    "reviews": []
   },
   {
-    "id": "stylus-core",
-    "name": "Stylus Core",
+    "id": "Infinite Graphite",
+    "name": "Infinite Graphite",
     "price": 100.0,
-    "currency": "R$",
+    "currency": "$",
     "status": "EM ESTOQUE",
-    "inStock": true,
+    "inStock": false,
     "category": "Canetas",
-    "image": "/assets/pens/stylus_core.jpg",
-    "shortDescription": "Dupla funcionalidade: perfeita para telas touch e anotações rápidas em papel.",
-    "features": ["Acabamento premium em plastico", "Escrita suave e contínua"],
+    "image": "/assets/pens/pen_infinite.jpg",
+    "shortDescription": "A fusão perfeita entre peso, equilíbrio e tecnologia. O corpo em grafite maciço proporciona uma experiência de escrita única.",
+    "features": ["Acabamento premium", "Escrita suave e contínua"],
     "techSpecs": {
-      "Material do Corpo": "Alumínio de alta resistência",
-      "Peso": "20 gramas",
-      "Comprimento": "138 mm",
-      "Mecanismo": "Retrátil",
+      "Material do Corpo": "Latão Aeroespacial 6061-T6 anodizado",
+      "Peso": "28 gramas",
+      "Comprimento": "145 mm",
+      "Mecanismo": "Click",
       "Tipo de Carga": "Refil esferográfico premium",
-      "Acabamento": "Acabamento anodizado",
-      "Garantia": "Vitalícia"
+      "Acabamento": "Grafite maciço",
+      "Garantia": "1 ano contra defeitos de fabricação"
     },
     "productInfo": {
-      "subtitle": "Design e tecnologia no seu dia a dia.",
+      "subtitle": "Design Grafite",
       "details": [
         {
-          "title": "Escrita fluida",
-          "description": "Ponta que desliza suavemente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
-          "image": "/assets/pens/stylus_core_1.jpg",
-          "icon": "solar:pen-new-square-bold"
-        },
-        {
-          "title": "Design e tecnologia no seu dia a dia.",
-          "description": "Ponta que desliza suavemente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
-          "image": "/assets/pens/stylus_core_2.jpg",
-          "icon": "solar:pen-new-square-bold"
-        },
-        {
-          "title": "Diversos usos",
-          "description": "A versatilidade que você precisa para criar, desenhar e escrever em qualquer superfície.",
-          "image": "/assets/pens/stylus_core_3.jpg",
+          "title": "Design Grafite",
+          "description": "A fusão perfeita entre peso, equilíbrio e tecnologia. O corpo em grafite maciço proporciona uma experiência de escrita única.",
           "icon": "solar:pen-new-square-bold"
         }
       ]
     },
-    "reviews": [
-      {
-        "author": "Marcos A.",
-        "role": "Arquiteto",
-        "rating": 5,
-        "comment": "Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."
-      }
-    ]
+    "reviews": []
   },
   {
     "id": "Carbon Fiber Edition",
@@ -197,7 +384,7 @@
     "status": "EM ESTOQUE",
     "inStock": true,
     "category": "Canetas",
-    "image": "/assets/pens/carbon_fiber_edition.jpg",
+    "image": "/assets/pens/pen_carbon.jpg",
     "shortDescription": "Dupla funcionalidade: perfeita para telas touch e anotações rápidas em papel.",
     "features": ["Acabamento premium em plastico", "Escrita suave e contínua"],
     "techSpecs": {
@@ -215,19 +402,19 @@
         {
           "title": "Leveza e resistência",
           "description": "Feita em fibra de carbono, esta caneta é extremamente leve e resistente, perfeita para longas sessões de escrita.",
-          "image": "/assets/pens/carbon_fiber_edition_1.jpg",
+          "image": "",
           "icon": "solar:pen-new-square-bold"
         },
         {
           "title": "Clipe elegante",
           "description": "O clipe elegante e sofisticado completa o design da caneta, tornando-a uma peça única e moderna.",
-          "image": "/assets/pens/carbon_fiber_edition.jpg",
+          "image": "",
           "icon": "solar:pen-new-square-bold"
         },
         {
           "title": "Design sofisticado",
           "description": "A combinação de materiais nobres confere à caneta um acabamento premium e elegante, perfeito para qualquer ocasião.",
-          "image": "/assets/pens/carbon_fiber_edition_2.jpg",
+          "image": "",
           "icon": "solar:pen-new-square-bold"
         }
       ]

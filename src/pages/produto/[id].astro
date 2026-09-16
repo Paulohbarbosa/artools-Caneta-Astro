@@ -1,11 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.astro';
-import TechSpecs from '../components/TechSpecs.astro';
-import productsData from '../data/products.json';
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+import TechSpecs from '../../components/TechSpecs.astro';
+import productsData from '../../data/products.json';
 
-const { productId } = Astro.props;
-const product = productsData.find(p => p.id === productId) || productsData[0];
+export function getStaticPaths() {
+  return productsData.map((product) => {
+    return {
+      params: { id: product.id },
+      props: { product },
+    };
+  });
+}
+
+const { product } = Astro.props;
 ---
 
 <Layout title={`${product.name} - Detalhes do Produto`}>
@@ -16,9 +24,9 @@ const product = productsData.find(p => p.id === productId) || productsData[0];
       <nav class="mb-8 text-sm font-mono uppercase tracking-widest text-stone-500 reveal-up">
         <a href="/" class="hover:text-stone-900 transition-colors">Início</a> 
         <span class="mx-2">/</span>
-        <a href="/pagina-2" class="hover:text-stone-900 transition-colors">Catálogo</a>
+        <a href="/catalogo" class="hover:text-stone-900 transition-colors">Catálogo</a>
         <span class="mx-2">/</span>
-        <span class="text-stone-900">Precision Pen Pro</span>
+        <span class="text-stone-900">{product.name}</span>
       </nav>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -81,6 +89,7 @@ const product = productsData.find(p => p.id === productId) || productsData[0];
       <!-- Informações do Produto (Inspirado na Imagem de Referência) -->
       <section class="mt-24 mb-24 reveal-up">
         <div class="text-center mb-16">
+          <span class="text-sm font-mono uppercase tracking-widest text-stone-500 mb-2">{product.productInfo.subtitle}</span>
           <h2 class="text-4xl md:text-5xl font-display font-bold text-stone-900 mb-2">
             {product.name.split(' ')[0]} <span class="text-stone-400 italic">{product.name.split(' ')[1]}</span>
           </h2>
