@@ -1,9 +1,8 @@
 [
   {
-    "id": "precision-pen-pro",
-    "name": "Precision Pen Pro",
-    "price": 129.00,
-    "currency": "$",
+    "id": "precision-pro",
+    "name": "Precision Pro",
+    "price": 129.0,
     "status": "ESGOTADO",
     "inStock": false,
     "category": "Canetas",
@@ -23,26 +22,23 @@
       "Acabamento": "Micro-usinagem a laser (Rugosidade de 0.8µm)",
       "Garantia": "Vitalícia contra defeitos de fabricação"
     },
-    "productInfo": {
-      "subtitle": "Uma caneta, infinitas possibilidades!",
-      "details": [
-        {
-          "title": "Escrita Suave",
-          "description": "Ponta que desliza facilmente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
-          "icon": "solar:pen-new-square-linear"
-        },
-        {
-          "title": "Design Ergonômico",
-          "description": "Estrutura perfeitamente balanceada, com materiais intensos e bem definidos, ideais para destacar informações e organizar suas ideias.",
-          "icon": "solar:layers-minimalistic-linear"
-        },
-        {
-          "title": "Uso Prático",
-          "description": "Alterne entre o uso e o repouso com um simples toque, de forma rápida e leve, para acompanhar seu ritmo sem interrupções.",
-          "icon": "solar:settings-linear"
-        }
-      ]
-    },
+    "productInfo": [
+      {
+        "title": "Escrita Suave",
+        "description": "Ponta que desliza facilmente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
+        "image": "/assets/pens/Precision-1.jpeg"
+      },
+      {
+        "title": "Design Ergonômico",
+        "description": "Estrutura perfeitamente balanceada, com materiais intensos e bem definidos, ideais para destacar informações e organizar suas ideias.",
+        "image": "/assets/pens/Precision-2.jpeg"
+      },
+      {
+        "title": "Uso Prático",
+        "description": "Alterne entre o uso e o repouso com um simples toque, de forma rápida e leve, para acompanhar seu ritmo sem interrupções.",
+        "image": "/assets/pens/Precision-3.jpeg"
+      }
+    ],
     "reviews": [
       {
         "author": "Marcos A.",
@@ -61,27 +57,34 @@
         "role": "Engenheiro Civil",
         "rating": 5,
         "comment": "O fluxo contínuo de tinta é real. Desde que comprei, não usei nenhuma outra ferramenta para meus esboços e rascunhos."
+      },
+      {
+        "author": "Thiago R.",
+        "role": "Engenheiro Civil",
+        "rating": 5,
+        "comment": "O fluxo contínuo de tinta é real. Desde que comprei, não usei nenhuma outra ferramenta para meus esboços e rascunhos."
       }
     ]
   },
   {
     "id": "signature-series-v",
     "name": "Signature Series V",
-    "price": 99.00,
+    "price": 99.0,
     "currency": "$",
     "status": "EM ESTOQUE",
     "inStock": true,
     "category": "Canetas",
     "image": "/assets/pens/pen_signature.jpg",
     "shortDescription": "O toque clássico com a tecnologia do amanhã. Ideal para assinaturas e documentos importantes.",
-    "features": [
-      "Acabamento premium",
-      "Escrita suave e contínua"
-    ],
+    "features": ["Acabamento premium", "Escrita suave e contínua"],
     "techSpecs": {
-      "Material do Corpo": "Aço Inoxidável",
+      "Material do Corpo": "Latão Aeroespacial 6061-T6 anodizado",
       "Peso": "28 gramas",
-      "Comprimento": "135 mm"
+      "Comprimento": "135 mm",
+      "Mecanismo": "Retrátil",
+      "Tipo de Carga": "Refil esferográfico premium",
+      "Acabamento": "Acetinado",
+      "Garantia": "Vitalícia contra defeitos de fabricação"
     },
     "productInfo": {
       "subtitle": "Elegância em cada traço",
@@ -94,5 +97,160 @@
       ]
     },
     "reviews": []
+  },
+  {
+    "id": "minimalist-ink",
+    "name": "Minimalist Ink",
+    "price": 75.0,
+    "currency": "R$",
+    "status": "EM ESTOQUE",
+    "inStock": true,
+    "category": "Canetas",
+    "image": "/assets/pens/pen_minimalist.jpg",
+    "shortDescription": "Design limpo e essencial para o seu dia a dia. Sem distrações, apenas a escrita pura.",
+    "features": ["Acabamento premium em plastico", "Escrita suave e contínua"],
+    "techSpecs": {
+      "Material do Corpo": "Policarbonato de alta resistência",
+      "Peso": "18 gramas",
+      "Comprimento": "138 mm",
+      "Mecanismo": "Retrátil",
+      "Tipo de Carga": "Refil esferográfico premium",
+      "Acabamento": "Acabamento fosco soft-touch",
+      "Garantia": "1 ano"
+    },
+    "productInfo": {
+      "subtitle": "Menos é mais.",
+      "details": [
+        {
+          "title": "Design Clássico",
+          "description": "Perfeita para ambientes corporativos.",
+          "icon": "solar:pen-new-square-bold"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "author": "Marcos A.",
+        "role": "Arquiteto",
+        "rating": 5,
+        "comment": "Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."
+      }
+    ]
+  },
+  {
+    "id": "stylus-core",
+    "name": "Stylus Core",
+    "price": 100.0,
+    "currency": "R$",
+    "status": "EM ESTOQUE",
+    "inStock": true,
+    "category": "Canetas",
+    "image": "/assets/pens/stylus_core.jpg",
+    "shortDescription": "Dupla funcionalidade: perfeita para telas touch e anotações rápidas em papel.",
+    "features": ["Acabamento premium em plastico", "Escrita suave e contínua"],
+    "techSpecs": {
+      "Material do Corpo": "Alumínio de alta resistência",
+      "Peso": "20 gramas",
+      "Comprimento": "138 mm",
+      "Mecanismo": "Retrátil",
+      "Tipo de Carga": "Refil esferográfico premium",
+      "Acabamento": "Acabamento anodizado",
+      "Garantia": "Vitalícia"
+    },
+    "productInfo": {
+      "subtitle": "Design e tecnologia no seu dia a dia.",
+      "details": [
+        {
+          "title": "Escrita fluida",
+          "description": "Ponta que desliza suavemente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
+          "image": "/assets/pens/stylus_core_1.jpg",
+          "icon": "solar:pen-new-square-bold"
+        },
+        {
+          "title": "Design e tecnologia no seu dia a dia.",
+          "description": "Ponta que desliza suavemente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
+          "image": "/assets/pens/stylus_core_2.jpg",
+          "icon": "solar:pen-new-square-bold"
+        },
+        {
+          "title": "Diversos usos",
+          "description": "A versatilidade que você precisa para criar, desenhar e escrever em qualquer superfície.",
+          "image": "/assets/pens/stylus_core_3.jpg",
+          "icon": "solar:pen-new-square-bold"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "author": "Marcos A.",
+        "role": "Arquiteto",
+        "rating": 5,
+        "comment": "Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."
+      }
+    ]
+  },
+  {
+    "id": "Carbon Fiber Edition",
+    "name": "Carbon Fiber Edition",
+    "price": 120.0,
+    "currency": "R$",
+    "status": "EM ESTOQUE",
+    "inStock": true,
+    "category": "Canetas",
+    "image": "/assets/pens/carbon_fiber_edition.jpg",
+    "shortDescription": "Dupla funcionalidade: perfeita para telas touch e anotações rápidas em papel.",
+    "features": ["Acabamento premium em plastico", "Escrita suave e contínua"],
+    "techSpecs": {
+      "Material do Corpo": "Fibra de Carbono de alta resistência",
+      "Peso": "20 gramas",
+      "Comprimento": "138 mm",
+      "Mecanismo": "Retrátil",
+      "Tipo de Carga": "Refil esferográfico premium",
+      "Acabamento": "Acabamento em Fibra de Carbono",
+      "Garantia": "Vitalícia"
+    },
+    "productInfo": {
+      "subtitle": "Estilo classico e moderno.",
+      "details": [
+        {
+          "title": "Leveza e resistência",
+          "description": "Feita em fibra de carbono, esta caneta é extremamente leve e resistente, perfeita para longas sessões de escrita.",
+          "image": "/assets/pens/carbon_fiber_edition_1.jpg",
+          "icon": "solar:pen-new-square-bold"
+        },
+        {
+          "title": "Clipe elegante",
+          "description": "O clipe elegante e sofisticado completa o design da caneta, tornando-a uma peça única e moderna.",
+          "image": "/assets/pens/carbon_fiber_edition.jpg",
+          "icon": "solar:pen-new-square-bold"
+        },
+        {
+          "title": "Design sofisticado",
+          "description": "A combinação de materiais nobres confere à caneta um acabamento premium e elegante, perfeito para qualquer ocasião.",
+          "image": "/assets/pens/carbon_fiber_edition_2.jpg",
+          "icon": "solar:pen-new-square-bold"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "author": "Marcos A.",
+        "role": "Estudante de Engenharia",
+        "rating": 5,
+        "comment": "Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."
+      },
+      {
+        "author": "Julia S.",
+        "role": "Designer de Produto",
+        "rating": 4,
+        "comment": "A qualidade de construção é impecável. Vale cada centavo pela precisão e conforto que ela oferece no dia a dia."
+      },
+      {
+        "author": "Thiago R.",
+        "role": "Engenheiro Civil",
+        "rating": 5,
+        "comment": "O fluxo contínuo de tinta é real. Desde que comprei, não usei nenhuma outra ferramenta para meus esboços e rascunhos."
+      }
+    ]
   }
 ]
