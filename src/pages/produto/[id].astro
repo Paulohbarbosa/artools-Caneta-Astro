@@ -17,7 +17,10 @@ export function getStaticPaths() {
 const { product } = Astro.props;
 ---
 
-<Layout title={`${product.name} - Detalhes do Produto`}>
+<Layout 
+  title={`${product.name} | Ferramenta de Precisão ArtTools`}
+  description={`Conheça a ${product.name}. ${product.shortDescription} Produto exclusivo. Deixe seu e-mail na opção 'Avise-me' para ser notificado sobre novos lotes disponíveis!`}
+>
   <main class="min-h-screen bg-[#F5F5F3] pt-32 pb-24">
     <div class="container mx-auto px-6 md:px-12">
       
