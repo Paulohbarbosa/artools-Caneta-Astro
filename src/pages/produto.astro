@@ -84,7 +84,52 @@ import TechSpecs from '../components/TechSpecs.astro';
 
         </div>
       </div>
+
+      <!-- Informações do Produto (Inspirado na Imagem de Referência) -->
+      <section class="mt-24 mb-24 reveal-up">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-stone-900 mb-2">Precision <span class="text-stone-400">Pro</span></h2>
+          <p class="text-xl text-stone-500 font-serif italic">Uma caneta, infinitas possibilidades!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <!-- Feature 1 -->
+          <div class="flex flex-col group">
+            <div class="w-full aspect-square bg-stone-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative">
+               <iconify-icon icon="solar:pen-new-square-linear" class="text-6xl text-stone-400 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+               <!-- Espaço para futura imagem do usuário: <img src="..." class="w-full h-full object-cover" /> -->
+            </div>
+            <h3 class="text-xl font-display font-bold text-stone-900 mb-3">Escrita Suave</h3>
+            <p class="text-stone-600 leading-relaxed text-sm">Ponta que desliza facilmente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="flex flex-col group">
+            <div class="w-full aspect-square bg-stone-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative">
+               <iconify-icon icon="solar:layers-minimalistic-linear" class="text-6xl text-stone-400 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+               <!-- Espaço para futura imagem do usuário: <img src="..." class="w-full h-full object-cover" /> -->
+            </div>
+            <h3 class="text-xl font-display font-bold text-stone-900 mb-3">Design Ergonômico</h3>
+            <p class="text-stone-600 leading-relaxed text-sm">Estrutura perfeitamente balanceada, com materiais intensos e bem definidos, ideais para destacar informações e organizar suas ideias.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="flex flex-col group">
+            <div class="w-full aspect-square bg-stone-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative">
+               <iconify-icon icon="solar:settings-linear" class="text-6xl text-stone-400 group-hover:scale-110 transition-transform duration-500"></iconify-icon>
+               <!-- Espaço para futura imagem do usuário: <img src="..." class="w-full h-full object-cover" /> -->
+            </div>
+            <h3 class="text-xl font-display font-bold text-stone-900 mb-3">Uso Prático</h3>
+            <p class="text-stone-600 leading-relaxed text-sm">Alterne entre o uso e o repouso com um simples toque, de forma rápida e leve, para acompanhar seu ritmo sem interrupções.</p>
+          </div>
+        </div>
+      </section>
       
+       <!-- Ficha Técnica (TechSpecs) -->
+      <div class="mt-24 mb-16">
+        <TechSpecs />
+      </div>
+
       <!-- Avaliações dos Clientes -->
       <section class="mt-24 mb-16 reveal-up">
         <h2 class="text-3xl font-display font-bold text-stone-900 mb-8 text-center md:text-left">Avaliações dos Clientes</h2>
@@ -132,10 +177,6 @@ import TechSpecs from '../components/TechSpecs.astro';
         </div>
       </section>
       
-    </div>
-    
-    <div class="mt-12">
-      <TechSpecs />
     </div>
   </main>
 </Layout>

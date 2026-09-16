@@ -1,0 +1,98 @@
+[
+  {
+    "id": "precision-pen-pro",
+    "name": "Precision Pen Pro",
+    "price": 129.00,
+    "currency": "$",
+    "status": "ESGOTADO",
+    "inStock": false,
+    "category": "Canetas",
+    "image": "/assets/pens/pen_precision.jpg",
+    "shortDescription": "A ferramenta definitiva para engenheiros, arquitetos e designers. Forjada com alumínio aeroespacial, a Precision Pen Pro oferece um peso perfeitamente balanceado que minimiza a fadiga durante longas sessões de rascunhos.",
+    "features": [
+      "Corpo em liga de alumínio anodizado",
+      "Mecanismo magnético silencioso",
+      "Compatível com refis padrão G2"
+    ],
+    "techSpecs": {
+      "Material do Corpo": "Alumínio Aeroespacial 6061-T6 anodizado",
+      "Peso": "24 gramas (balanceamento perfeito 50/50)",
+      "Comprimento": "142 mm",
+      "Mecanismo": "Retrátil silencioso com amortecimento a óleo",
+      "Tipo de Carga": "Refil Schmidt P900 Parker-style (tinta gel premium inclusa)",
+      "Acabamento": "Micro-usinagem a laser (Rugosidade de 0.8µm)",
+      "Garantia": "Vitalícia contra defeitos de fabricação"
+    },
+    "productInfo": {
+      "subtitle": "Uma caneta, infinitas possibilidades!",
+      "details": [
+        {
+          "title": "Escrita Suave",
+          "description": "Ponta que desliza facilmente sobre o papel, proporcionando uma escrita confortável, fluida e agradável do início ao fim.",
+          "icon": "solar:pen-new-square-linear"
+        },
+        {
+          "title": "Design Ergonômico",
+          "description": "Estrutura perfeitamente balanceada, com materiais intensos e bem definidos, ideais para destacar informações e organizar suas ideias.",
+          "icon": "solar:layers-minimalistic-linear"
+        },
+        {
+          "title": "Uso Prático",
+          "description": "Alterne entre o uso e o repouso com um simples toque, de forma rápida e leve, para acompanhar seu ritmo sem interrupções.",
+          "icon": "solar:settings-linear"
+        }
+      ]
+    },
+    "reviews": [
+      {
+        "author": "Marcos A.",
+        "role": "Arquiteto",
+        "rating": 5,
+        "comment": "Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."
+      },
+      {
+        "author": "Julia S.",
+        "role": "Designer de Produto",
+        "rating": 4,
+        "comment": "A qualidade de construção é impecável. Vale cada centavo pela precisão e conforto que ela oferece no dia a dia."
+      },
+      {
+        "author": "Thiago R.",
+        "role": "Engenheiro Civil",
+        "rating": 5,
+        "comment": "O fluxo contínuo de tinta é real. Desde que comprei, não usei nenhuma outra ferramenta para meus esboços e rascunhos."
+      }
+    ]
+  },
+  {
+    "id": "signature-series-v",
+    "name": "Signature Series V",
+    "price": 99.00,
+    "currency": "$",
+    "status": "EM ESTOQUE",
+    "inStock": true,
+    "category": "Canetas",
+    "image": "/assets/pens/pen_signature.jpg",
+    "shortDescription": "O toque clássico com a tecnologia do amanhã. Ideal para assinaturas e documentos importantes.",
+    "features": [
+      "Acabamento premium",
+      "Escrita suave e contínua"
+    ],
+    "techSpecs": {
+      "Material do Corpo": "Aço Inoxidável",
+      "Peso": "28 gramas",
+      "Comprimento": "135 mm"
+    },
+    "productInfo": {
+      "subtitle": "Elegância em cada traço",
+      "details": [
+        {
+          "title": "Design Clássico",
+          "description": "Perfeita para ambientes corporativos.",
+          "icon": "solar:pen-new-square-bold"
+        }
+      ]
+    },
+    "reviews": []
+  }
+]
