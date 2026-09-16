@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import TechSpecs from '../components/TechSpecs.astro';
 ---
 
 <Layout title="Precision Pen Pro - Detalhes do Produto">
@@ -84,6 +85,57 @@ import Button from '../components/Button.astro';
         </div>
       </div>
       
+      <!-- Avaliações dos Clientes -->
+      <section class="mt-24 mb-16 reveal-up">
+        <h2 class="text-3xl font-display font-bold text-stone-900 mb-8 text-center md:text-left">Avaliações dos Clientes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Avaliação 1 -->
+          <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-1 mb-4 text-lg">
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+            </div>
+            <p class="text-stone-600 mb-4 italic leading-relaxed">"Simplesmente a melhor caneta que já usei. O peso e o balanço são perfeitos para longas sessões de desenho arquitetônico."</p>
+            <p class="font-bold text-sm text-stone-900 tracking-wide uppercase font-mono">- Marcos A., Arquiteto</p>
+          </div>
+
+          <!-- Avaliação 2 -->
+          <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-1 mb-4 text-lg">
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-stone-200"></iconify-icon>
+            </div>
+            <p class="text-stone-600 mb-4 italic leading-relaxed">"A qualidade de construção é impecável. Vale cada centavo pela precisão e conforto que ela oferece no dia a dia."</p>
+            <p class="font-bold text-sm text-stone-900 tracking-wide uppercase font-mono">- Julia S., Designer de Produto</p>
+          </div>
+
+          <!-- Avaliação 3 -->
+          <div class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-1 mb-4 text-lg">
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+              <iconify-icon icon="solar:star-bold" class="text-yellow-500"></iconify-icon>
+            </div>
+            <p class="text-stone-600 mb-4 italic leading-relaxed">"O fluxo contínuo de tinta é real. Desde que comprei, não usei nenhuma outra ferramenta para meus esboços e rascunhos."</p>
+            <p class="font-bold text-sm text-stone-900 tracking-wide uppercase font-mono">- Thiago R., Engenheiro Civil</p>
+          </div>
+
+        </div>
+      </section>
+      
+    </div>
+    
+    <div class="mt-12">
+      <TechSpecs />
     </div>
   </main>
 </Layout>
