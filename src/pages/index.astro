@@ -4,6 +4,7 @@ import FlashlightCard from '../components/FlashlightCard.astro';
 import PricingCard from '../components/PricingCard.astro';
 import Marquee from '../components/Marquee.astro';
 import TechSpecs from '../components/TechSpecs.astro';
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -168,9 +169,11 @@ import Layout from '../layouts/Layout.astro';
                 ></div>
 
                 <!-- Imagem destacando as qualidades e características -->
-                <img
-                  src="assets/raw_files/caneta.jpeg"
+                <Image
+                  src="/assets/raw_files/caneta.jpeg"
                   alt="Detalhe Tecnológico da Artools"
+                  width={800}
+                  height={600}
                   class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100 mix-blend-multiply"
                 />
 
@@ -355,11 +358,6 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- SEÇÃO MARQUEE INFINITO (Componentizado) -->
       <Marquee />
-
-      <!-- SEÇÃO DE ESPECIFICAÇÕES TÉCNICAS -->
-       <!-- Essa seção vai ser repetir em todas páginas de canetas e componentes que será vendido -->
-      <TechSpecs />
-
       <!-- 4. SEÇÃO DE COMPRA / ASSINATURA -->
       <section
         class="relative min-h-screen flex items-center justify-center overflow-hidden py-24 z-20"
@@ -444,7 +442,13 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Interactions & Video Canvas Logic -->
     <script is:inline>
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("astro:page-load", () => {
+        // Força vídeos a ficarem mutados ao trocar de página no ClientRouter
+        document.querySelectorAll('video').forEach(vid => {
+          vid.muted = true;
+          vid.play().catch(() => {});
+        });
+        
         gsap.registerPlugin(ScrollTrigger);
 
         // Headline staggered reveal (Específico da Home)
