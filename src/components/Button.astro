@@ -11,7 +11,8 @@ const {
   variant = 'primary', 
   href,
   class: className = '',
-  onClick
+  onClick,
+  ...rest
 } = Astro.props;
 
 const baseStyles = "rounded-full font-medium transition-colors flex items-center justify-center gap-2 group";
@@ -31,6 +32,7 @@ const Tag = href ? 'a' : 'button';
   href={href}
   onclick={onClick}
   class:list={[baseStyles, variants[variant], className]}
+  {...rest}
 >
   <slot />
 </Tag>

@@ -54,15 +54,42 @@ const currentPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
   </nav>
 
   <div class="flex items-center gap-6 text-stone-900 pointer-events-auto">
-    <button
-      onclick="window.location.href = 'compra.html'"
-      class="hover:text-stone-500 transition-colors duration-300 flex items-center justify-center"
+    <a
+      href="/compra"
+      class="hover:text-stone-500 transition-colors duration-300 flex items-center justify-center relative"
     >
       <iconify-icon
         icon="solar:bag-3-linear"
         class="text-xl"
       ></iconify-icon>
-    </button>
+      <span
+        id="menu-cart-count"
+        class="absolute -top-1.5 -right-2 bg-stone-900 text-white text-[9px] font-bold w-[18px] h-[18px] rounded-full flex items-center justify-center transition-all duration-300 scale-0"
+      >0</span>
+    </a>
     <div class="w-[1px] h-4 bg-stone-300 hidden md:block"></div>
   </div>
 </header>
+
+<script>
+  import { cartItems } from '../store/cartStore';
+
+  document.addEventListener("astro:page-load", () => {
+    const menuCartCount = document.getElementById('menu-cart-count');
+    
+    if (menuCartCount) {
+      cartItems.subscribe((cart) => {
+        const count = Object.values(cart).reduce((acc, item) => acc + item.quantity, 0);
+        menuCartCount.textContent = count.toString();
+        
+        if (count > 0) {
+          menuCartCount.classList.remove('scale-0');
+          menuCartCount.classList.add('scale-100');
+        } else {
+          menuCartCount.classList.remove('scale-100');
+          menuCartCount.classList.add('scale-0');
+        }
+      });
+    }
+  });
+</script>

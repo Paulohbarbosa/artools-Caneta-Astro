@@ -62,15 +62,21 @@ const {
 
       <div class="w-6 h-[1px] bg-stone-600 mb-4"></div>
 
-      <div
-        class="text-[9px] font-mono uppercase tracking-[0.3em] text-stone-400 mb-10"
-      >
+      <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-stone-400 mb-10">
         {subtitle}
       </div>
     </div>
 
     <div class="w-full mt-auto">
-      <Button variant="primary-dark" href={buttonHref}>
+      <Button 
+        variant="primary-dark" 
+        href={buttonHref}
+        data-add-to-cart
+        data-id={title.replace(/<[^>]*>?/gm, '')}
+        data-name={title.replace(/<[^>]*>?/gm, '')}
+        data-price={price ? price.replace('$', '') : '149'}
+        data-href={buttonHref}
+      >
         {buttonText}
         <iconify-icon
           icon="solar:arrow-right-linear"
@@ -114,9 +120,45 @@ const {
           >{priceUnit}</span
         >
       </div>
-      <Button variant="secondary-dark" href={buttonHref}>
+      <Button 
+        variant="secondary-dark" 
+        href={buttonHref}
+        data-add-to-cart
+        data-id={title.replace(/<[^>]*>?/gm, '')}
+        data-name={title.replace(/<[^>]*>?/gm, '')}
+        data-price={price ? price.replace('$', '') : '89'}
+        data-href={buttonHref}
+      >
         {buttonText}
       </Button>
     </div>
   </div>
 )}
+
+<script>
+  import { addCartItem } from '../store/cartStore';
+
+  document.addEventListener("astro:page-load", () => {
+    const addToCartButtons = document.querySelectorAll('[data-add-to-cart]');
+    
+    addToCartButtons.forEach(btn => {
+      const newBtn = btn.cloneNode(true) as HTMLElement;
+      btn.parentNode?.replaceChild(newBtn, btn);
+      
+      newBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const id = newBtn.getAttribute('data-id') || 'prod';
+        const name = newBtn.getAttribute('data-name') || 'Produto';
+        const price = parseFloat(newBtn.getAttribute('data-price') || '0');
+        const href = newBtn.getAttribute('data-href');
+        
+        addCartItem({ id, name, price, image: '/assets/raw_files/caneta.jpeg' });
+        
+        if (href) {
+          window.location.href = href;
+        }
+      });
+    });
+  });
+</script>
