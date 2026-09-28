@@ -8,13 +8,17 @@ export interface Props {
   title?: string;
   description?: string;
   canonicalURL?: string | URL;
+  image?: string;
 }
 
 const {
   title = "Artools - Ferramentas de Precisão",
   description = "A Artools redefine o equilíbrio entre peso, fluxo e design. Feita para criadores que exigem perfeição em cada traço.",
-  canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url)
+  canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url),
+  image = "/assets/pens/pen_minimalist.jpg"
 } = Astro.props;
+
+const imageURL = new URL(image, Astro.site || Astro.url);
 ---
 <!doctype html>
 <html class="scroll-smooth" lang="pt-br">
@@ -29,6 +33,20 @@ const {
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imageURL} />
+		<meta property="og:url" content={canonicalURL} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={imageURL} />
+		<meta property="twitter:url" content={canonicalURL} />
+
 		<ClientRouter />
 
 		<!-- Fonts -->
